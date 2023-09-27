@@ -1,4 +1,9 @@
+from controller.controller import Controller
 import store
 from store.utils.patient_info import PatientInfo
 
-store.db.create_patient(PatientInfo("Mario Rossi", "2000-01-01"))
+f = open("sample.json")
+
+Controller.from_json(f).store_data()
+
+f.close()
